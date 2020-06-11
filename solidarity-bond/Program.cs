@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace solidarity_bond
 {
@@ -6,7 +7,9 @@ namespace solidarity_bond
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Lancement application");
+            STR_MSG str_msg = new STR_MSG();
+            
+            Console.WriteLine(JsonConvert.SerializeObject(str_msg));
             Service service = new Service();
             service.StartListening();
         }

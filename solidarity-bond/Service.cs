@@ -18,15 +18,19 @@ namespace solidarity_bond
     class Service
     {
         public static ManualResetEvent allDone = new ManualResetEvent(false);  
+
+        private ConnectionComptoir connectionComptoir;
         public Service()
         {
             
         }
 
-        public void StartListening() {  
-        // Establish the local endpoint for the socket.  
-        // The DNS name of the computer  
-        // running the listener is "host.contoso.com".  
+        private STR_MSG Operation(STR_MSG str_msg){
+
+            return str_msg;
+        }
+
+        public void StartListening() { 
         IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());  
         IPAddress ipAddress = ipHostInfo.AddressList[0];  
         IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);  
@@ -56,10 +60,7 @@ namespace solidarity_bond
   
         } catch (Exception e) {  
             Console.WriteLine(e.ToString());  
-        }  
-  
-        Console.WriteLine("\nPress ENTER to continue...");  
-        Console.Read();  
+        }
   
     }  
         public static void AcceptCallback(IAsyncResult ar) {  
@@ -102,7 +103,7 @@ namespace solidarity_bond
                 Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",  
                     content.Length, content );  
                 // Echo the data back to the client.  
-                Send(handler, content);  
+                Send(handler, "flag");
             } else {  
                 // Not all data received. Get more.  
                 handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,  
