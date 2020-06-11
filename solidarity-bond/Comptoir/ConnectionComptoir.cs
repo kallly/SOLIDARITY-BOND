@@ -6,8 +6,8 @@ namespace solidarity_bond
     {
         public STR_MSG connection(STR_MSG str_msg)
         {
-            Console.WriteLine("FLAG||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
-
+            
+            str_msg.data["success"] = "FLAG";
             return str_msg;
         }
     }

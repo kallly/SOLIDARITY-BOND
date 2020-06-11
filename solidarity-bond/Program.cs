@@ -30,10 +30,10 @@ namespace solidarity_bond
             str_msg.data["operation"] = "connection";
             
             String temp = JsonConvert.SerializeObject(str_msg);
-            Console.WriteLine(temp);
+            Console.WriteLine(temp + "<EOF>");
 
-            STR_MSG result;
-            result = (STR_MSG)JsonConvert.DeserializeObject<STR_MSG>(temp);
+            /*STR_MSG result;
+            result = (STR_MSG)JsonConvert.DeserializeObject<STR_MSG>(temp);*/
 
             Service service = new Service();
             service.StartListening();

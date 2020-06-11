@@ -26,7 +26,7 @@ namespace solidarity_bond
             
         }
 
-        public STR_MSG Operation(STR_MSG str_msg)
+        private STR_MSG Operation(STR_MSG str_msg)
         {
             str_msg.data["error"] = string.Empty;
             str_msg.data["success"] = "The connection operation has been authorized.";
@@ -80,7 +80,7 @@ namespace solidarity_bond
         }
   
     }  
-        public static void AcceptCallback(IAsyncResult ar) {  
+        public void AcceptCallback(IAsyncResult ar) {  
         // Signal the main thread to continue.  
         allDone.Set();  
   
@@ -95,7 +95,7 @@ namespace solidarity_bond
             new AsyncCallback(ReadCallback), state);  
     }  
   
-        public static void ReadCallback(IAsyncResult ar) {  
+        public void ReadCallback(IAsyncResult ar) {  
         String content = String.Empty;  
   
         // Retrieve the state object and the handler socket  
@@ -120,8 +120,26 @@ namespace solidarity_bond
                 Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",  
                     content.Length, content );  
                 // Echo the data back to the client.  
-                Send(handler, "flag");
-               // Operation((STR_MSG)JsonConvert.DeserializeObject<STR_MSG>(content));
+
+                STR_MSG result = new STR_MSG();
+                try{
+                    
+                    result = (STR_MSG)JsonConvert.DeserializeObject<STR_MSG>(content.Substring(0,content.Length-6));
+                }catch(Exception e){
+                    Console.WriteLine(e);
+                }
+                
+                result = Operation(result);
+
+                String resultJSON = "";
+                try{
+                    
+                    resultJSON = JsonConvert.SerializeObject(result);
+                }catch(Exception e){
+                    Console.WriteLine(e);
+                }
+            
+                Send(handler, resultJSON);
 
             } else {  
                 // Not all data received. Get more.  
