@@ -4,11 +4,11 @@ namespace solidarity_bond
 {
     class ConnectionComptoir
     {
-        public STR_MSG connection(STR_MSG str_msg)
+        private CAM cam = new CAM();
+
+        public STR_MSG Connection(STR_MSG str_msg)
         {
-            
-            str_msg.data["success"] = "FLAG";
-            return str_msg;
+            return cam.Dispatch(str_msg);
         }
     }
 }
