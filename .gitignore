@@ -1,1 +1,4 @@
 .vscode/*
+.vs/*
+solidarity-bond/bin/*
+solidarity-bond/obj/*
