@@ -4,11 +4,11 @@ namespace solidarity_bond
 {
     class ConnectionComptoir
     {
-        static void zza(string[] args)
+        public STR_MSG connection(STR_MSG str_msg)
         {
-            Console.WriteLine("Lancement application");
-            Service service = new Service();
-            service.StartListening();
+            Console.WriteLine("FLAG||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+
+            return str_msg;
         }
     }
 }
