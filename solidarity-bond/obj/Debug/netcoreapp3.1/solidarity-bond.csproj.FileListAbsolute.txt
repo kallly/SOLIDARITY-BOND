@@ -1,0 +1,13 @@
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/bin/Debug/netcoreapp3.1/solidarity-bond
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/bin/Debug/netcoreapp3.1/solidarity-bond.deps.json
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/bin/Debug/netcoreapp3.1/solidarity-bond.runtimeconfig.json
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/bin/Debug/netcoreapp3.1/solidarity-bond.runtimeconfig.dev.json
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/bin/Debug/netcoreapp3.1/solidarity-bond.dll
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/bin/Debug/netcoreapp3.1/solidarity-bond.pdb
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/obj/Debug/netcoreapp3.1/solidarity-bond.csprojAssemblyReference.cache
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/obj/Debug/netcoreapp3.1/solidarity-bond.AssemblyInfoInputs.cache
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/obj/Debug/netcoreapp3.1/solidarity-bond.AssemblyInfo.cs
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/obj/Debug/netcoreapp3.1/solidarity-bond.csproj.CoreCompileInputs.cache
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/obj/Debug/netcoreapp3.1/solidarity-bond.dll
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/obj/Debug/netcoreapp3.1/solidarity-bond.pdb
+/home/kally/Documents/C#/SOLIDARITY-BOND/solidarity-bond/obj/Debug/netcoreapp3.1/solidarity-bond.genruntimeconfig.cache
