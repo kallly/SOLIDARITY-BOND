@@ -43,13 +43,25 @@ namespace solidarity_bond
             /* TEST RESERVATION INPUT*/
             //str_msg.data["operation"] = "get_reservations";
             //str_msg.data["operation"] = "get_reservations_by_user";
+            /*
             str_msg.data["operation"] = "add_reservation";
             str_msg.data["struct_name"] = "ReservationStruct";
             str_msg.data["struct"] = new ReservationStruct();
             str_msg.data["struct"].address = "aix";
             str_msg.data["struct"].date = DateTime.Now;
             str_msg.data["struct"].username = "baudry";
-            
+            */
+            str_msg.data["operation"] = "update_reservation";
+            str_msg.data["struct_name"] = "ReservationStruct";
+            str_msg.data["struct"] = new ReservationStruct();
+            str_msg.data["struct"].id = 1;
+            str_msg.data["struct"].todo = "expedition";
+            str_msg.data["struct"].livraison = true;
+            str_msg.data["struct"].livraison_date = DateTime.Now;
+            str_msg.data["struct"].pre_expedition = false;
+            str_msg.data["struct"].pre_expedition_date = DateTime.Now;
+            str_msg.data["struct"].expedition = false;
+            str_msg.data["struct"].expedition_date = DateTime.Now;
 
             String temp = JsonConvert.SerializeObject(str_msg);
             Console.WriteLine(temp + "<EOF>");

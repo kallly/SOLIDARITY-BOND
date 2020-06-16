@@ -60,6 +60,10 @@ namespace solidarity_bond
                         reservationExecEngine = new ReservationExecutionEngine();
                         str_msg = reservationExecEngine.Add_reservation(str_msg);
                         break;
+                    case "update_reservation":
+                        reservationExecEngine = new ReservationExecutionEngine();
+                        str_msg = reservationExecEngine.Update_reservation(str_msg);
+                        break;
                     default:
                         str_msg.data["success"] = string.Empty;
                         // unknown or not alloed op

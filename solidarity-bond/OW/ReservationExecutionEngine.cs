@@ -21,5 +21,9 @@ namespace solidarity_bond
         {
             return reservationComponent.Add_reservation(str_msg);;
         }
+        public STR_MSG Update_reservation(STR_MSG str_msg)
+        {
+            return reservationComponent.Update_reservation(str_msg);;
+        }
     }
 }

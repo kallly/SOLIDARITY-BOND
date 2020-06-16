@@ -49,5 +49,9 @@ namespace solidarity_bond
         {   
             return ExecSQL(reservationMap.Insert(str_msg));
         }
+        public STR_MSG Update_reservation(STR_MSG str_msg)
+        {   
+            return ExecSQL(reservationMap.UpdateEtape(str_msg));
+        }
     }
 }

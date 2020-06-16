@@ -61,6 +61,10 @@ namespace solidarity_bond
                     if (connectionComptoir == null) reservationComptoir = new ReservationComptoir();
                     str_msg = reservationComptoir.Add_reservation(str_msg);
                     break;
+                case "update_reservation":
+                    if (connectionComptoir == null) reservationComptoir = new ReservationComptoir();
+                    str_msg = reservationComptoir.Update_reservation(str_msg);
+                    break;
                 default:
                     str_msg.data["success"] = string.Empty;
                     // unknown or not alloed op

@@ -18,5 +18,9 @@ namespace solidarity_bond
         {
             return cam.Dispatch(str_msg);
         }
+        public STR_MSG Update_reservation(STR_MSG str_msg)
+        {
+            return cam.Dispatch(str_msg);
+        }
     }
 }
