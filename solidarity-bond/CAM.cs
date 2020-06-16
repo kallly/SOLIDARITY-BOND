@@ -6,6 +6,8 @@ namespace solidarity_bond
     {
         private ConnectionExecutionEngine connectionExecEngine;
         private StockExecutionEngine stockExecEngine;
+        private ReservationExecutionEngine reservationExecEngine;
+
         public CAM()
         {
         }
@@ -45,6 +47,18 @@ namespace solidarity_bond
                     case "update_stock":
                         stockExecEngine = new StockExecutionEngine();
                         str_msg = stockExecEngine.Update_stock(str_msg);
+                        break;
+                    case "get_reservations":
+                        reservationExecEngine = new ReservationExecutionEngine();
+                        str_msg = reservationExecEngine.Get_reservations(str_msg);
+                        break;
+                    case "get_reservations_by_user":
+                        reservationExecEngine = new ReservationExecutionEngine();
+                        str_msg = reservationExecEngine.Get_reservations_by_user(str_msg);
+                        break;
+                    case "add_reservation":
+                        reservationExecEngine = new ReservationExecutionEngine();
+                        str_msg = reservationExecEngine.Add_reservation(str_msg);
                         break;
                     default:
                         str_msg.data["success"] = string.Empty;

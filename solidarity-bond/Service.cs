@@ -22,6 +22,8 @@ namespace solidarity_bond
 
         private ConnectionComptoir connectionComptoir;
         private StockComptoir stockComptoir;
+        private ReservationComptoir reservationComptoir;
+
         public Service()
         {
             
@@ -46,6 +48,18 @@ namespace solidarity_bond
                 case "update_stock":
                     if (connectionComptoir == null) stockComptoir = new StockComptoir();
                     str_msg = stockComptoir.Update_stock(str_msg);
+                    break;
+                case "get_reservations":
+                    if (connectionComptoir == null) reservationComptoir = new ReservationComptoir();
+                    str_msg = reservationComptoir.Get_reservations(str_msg);
+                    break;
+                case "get_reservations_by_user":
+                    if (connectionComptoir == null) reservationComptoir = new ReservationComptoir();
+                    str_msg = reservationComptoir.Get_reservations_by_user(str_msg);
+                    break;
+                case "add_reservation":
+                    if (connectionComptoir == null) reservationComptoir = new ReservationComptoir();
+                    str_msg = reservationComptoir.Add_reservation(str_msg);
                     break;
                 default:
                     str_msg.data["success"] = string.Empty;
