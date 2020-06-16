@@ -28,6 +28,12 @@ namespace solidarity_bond
             };
 
             str_msg.data["operation"] = "connection";
+
+            //str_msg.data["operation"] = "get_stock";
+            //str_msg.data["struct_name"] = "StockStruct";
+            //str_msg.data["struct"] = new StockStruct();
+            //str_msg.data["struct"].objet = "crochetV1";
+            //str_msg.data["struct"].stock = 20;
             
             String temp = JsonConvert.SerializeObject(str_msg);
             Console.WriteLine(temp + "<EOF>");

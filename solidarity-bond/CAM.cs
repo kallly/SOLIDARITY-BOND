@@ -5,6 +5,7 @@ namespace solidarity_bond
     class CAM
     {
         private ConnectionExecutionEngine connectionExecEngine;
+        private StockExecutionEngine stockExecEngine;
         public CAM()
         {
         }
@@ -37,7 +38,15 @@ namespace solidarity_bond
                         connectionExecEngine = new ConnectionExecutionEngine();
                         str_msg = connectionExecEngine.Connection(str_msg);
                         break;
-                default:
+                    case "get_stock":
+                        stockExecEngine = new StockExecutionEngine();
+                        str_msg = stockExecEngine.Get_stock(str_msg);
+                        break;
+                    case "update_stock":
+                        stockExecEngine = new StockExecutionEngine();
+                        str_msg = stockExecEngine.Update_stock(str_msg);
+                        break;
+                    default:
                         str_msg.data["success"] = string.Empty;
                         // unknown or not alloed op
                         str_msg.data["error"] = str_msg.data["operation"] + " operation is not allowed for" + str_msg.application + "application.";

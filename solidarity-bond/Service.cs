@@ -21,6 +21,7 @@ namespace solidarity_bond
         public static ManualResetEvent allDone = new ManualResetEvent(false);  
 
         private ConnectionComptoir connectionComptoir;
+        private StockComptoir stockComptoir;
         public Service()
         {
             
@@ -37,6 +38,14 @@ namespace solidarity_bond
                 case "connection":
                     if (connectionComptoir == null) connectionComptoir = new ConnectionComptoir();
                     str_msg = connectionComptoir.Connection(str_msg);
+                    break;
+                case "get_stock":
+                    if (connectionComptoir == null) stockComptoir = new StockComptoir();
+                    str_msg = stockComptoir.Get_stock(str_msg);
+                    break;
+                case "update_stock":
+                    if (connectionComptoir == null) stockComptoir = new StockComptoir();
+                    str_msg = stockComptoir.Update_stock(str_msg);
                     break;
                 default:
                     str_msg.data["success"] = string.Empty;

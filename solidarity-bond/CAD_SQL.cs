@@ -15,10 +15,11 @@ namespace solidarity_bond
         public CAD_SQL(STR_MSG str_msg)
         {
             // Init sql connection
-            this.conString = "Server=196.168.1.69; Database=solidarity_bond; Uid=root; Pwd=;";
+            this.conString = @"Server=192.168.1.85; Database=solidarity_bond; Uid=root; Pwd=;";
             try
             {
                 this.sqlConnection = new MySqlConnection(conString);
+                Console.WriteLine("flag");
             }
             catch (MySqlException e)
             {
