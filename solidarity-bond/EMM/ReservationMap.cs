@@ -5,7 +5,7 @@ namespace solidarity_bond
     public struct ReservationStruct
     {
         public int id;
-        public string address,username;
+        public string centre,username,objet;
         public DateTime date;
         public string todo;
         public bool livraison,pre_expedition,expedition;
@@ -15,24 +15,25 @@ namespace solidarity_bond
     {
         public STR_MSG Select(STR_MSG str_msg)
         {
-            str_msg.data["query"] = "SELECT * FROM reservation;";
+            str_msg.data["query"] = "SELECT * FROM reservationView;";
             Console.WriteLine(str_msg.data["query"]);
             return str_msg;
         }
         public STR_MSG SelectByUser(STR_MSG str_msg)
         {
-            str_msg.data["query"] = "SELECT * FROM reservation " +
+            str_msg.data["query"] = "SELECT * FROM reservationView " +
             "WHERE ( username='" + str_msg.username + "');";
             Console.WriteLine(str_msg.data["query"]);
             return str_msg;
         }
         public STR_MSG Insert(STR_MSG str_msg)
         {
-            str_msg.data["query"] = "INSERT INTO reservation " +
-            "(adress,date,username) " +
-            "VALUES ('" + str_msg.data["struct"].address + "','" + 
-            str_msg.data["struct"].date.ToString("yyyy-MM-dd") + "','" + 
-            str_msg.username + "');";
+            str_msg.data["query"] = "CALL InsertReservation('" +
+            str_msg.data["struct"].date.ToString("yyyy-MM-dd") + "','" +
+            str_msg.username + "','" +
+            str_msg.data["struct"].centre + "','" +
+            str_msg.data["struct"].objet +
+            "');" ;
             Console.WriteLine(str_msg.data["query"]);
             return str_msg;
         }

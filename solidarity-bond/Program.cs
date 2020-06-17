@@ -11,7 +11,7 @@ namespace solidarity_bond
             
             STR_MSG str_msg = new STR_MSG();
             str_msg.username = "baudry";
-            str_msg.password = "password";
+            str_msg.password = "baudry";
             str_msg.application = "solidarity_app_console";
             str_msg.version = "1.0";
 
@@ -43,14 +43,16 @@ namespace solidarity_bond
             /* TEST RESERVATION INPUT*/
             //str_msg.data["operation"] = "get_reservations";
             //str_msg.data["operation"] = "get_reservations_by_user";
-            /*
+            
             str_msg.data["operation"] = "add_reservation";
             str_msg.data["struct_name"] = "ReservationStruct";
             str_msg.data["struct"] = new ReservationStruct();
-            str_msg.data["struct"].address = "aix";
+            str_msg.data["struct"].centre = "Aix-en-Provence";
             str_msg.data["struct"].date = DateTime.Now;
             str_msg.data["struct"].username = "baudry";
-            */
+            str_msg.data["struct"].objet = "crochetV1";
+            
+            /*
             str_msg.data["operation"] = "update_reservation";
             str_msg.data["struct_name"] = "ReservationStruct";
             str_msg.data["struct"] = new ReservationStruct();
@@ -62,6 +64,7 @@ namespace solidarity_bond
             str_msg.data["struct"].pre_expedition_date = DateTime.Now;
             str_msg.data["struct"].expedition = false;
             str_msg.data["struct"].expedition_date = DateTime.Now;
+            */
 
             String temp = JsonConvert.SerializeObject(str_msg);
             Console.WriteLine(temp + "<EOF>");
