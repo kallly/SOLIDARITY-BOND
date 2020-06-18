@@ -31,19 +31,19 @@ namespace solidarity_bond
             str_msg.data["operation"] = "connection";
             */
 
-            /* TEST STOCK INPUT
+            /* TEST STOCK INPUT*/
             str_msg.data["operation"] = "get_stock";
             //str_msg.data["operation"] = "update_stock";
             str_msg.data["struct_name"] = "StockStruct";
             str_msg.data["struct"] = new StockStruct();
             str_msg.data["struct"].objet = "crochetV1";
             //str_msg.data["struct"].stock = 20;
-            */
+            
             
             /* TEST RESERVATION INPUT*/
             //str_msg.data["operation"] = "get_reservations";
             //str_msg.data["operation"] = "get_reservations_by_user";
-            
+            /*
             str_msg.data["operation"] = "add_reservation";
             str_msg.data["struct_name"] = "ReservationStruct";
             str_msg.data["struct"] = new ReservationStruct();
@@ -51,7 +51,7 @@ namespace solidarity_bond
             str_msg.data["struct"].date = DateTime.Now;
             str_msg.data["struct"].username = "baudry";
             str_msg.data["struct"].objet = "crochetV1";
-            
+            */
             /*
             str_msg.data["operation"] = "update_reservation";
             str_msg.data["struct_name"] = "ReservationStruct";
