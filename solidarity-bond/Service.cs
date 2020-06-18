@@ -148,10 +148,11 @@ namespace solidarity_bond
                 Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",  
                     content.Length, content );  
                 // Echo the data back to the client.  
-
+                
+                Console.WriteLine(content);
                 STR_MSG result = new STR_MSG();
                 try{
-                    result = (STR_MSG)JsonConvert.DeserializeObject<STR_MSG>(content.Substring(0,content.Length-6));
+                    result = (STR_MSG)JsonConvert.DeserializeObject<STR_MSG>(content.Substring(0,content.Length-5));
                 }catch(Exception e){
                     Console.WriteLine(e);
                 }
