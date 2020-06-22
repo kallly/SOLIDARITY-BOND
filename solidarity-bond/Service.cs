@@ -152,6 +152,7 @@ namespace solidarity_bond
                 Console.WriteLine(content);
                 STR_MSG result = new STR_MSG();
                 try{
+                    Console.WriteLine(content.Substring(0,content.Length-5));
                     result = (STR_MSG)JsonConvert.DeserializeObject<STR_MSG>(content.Substring(0,content.Length-5));
                 }catch(Exception e){
                     Console.WriteLine(e);

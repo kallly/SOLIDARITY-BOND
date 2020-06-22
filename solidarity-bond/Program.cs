@@ -27,11 +27,11 @@ namespace solidarity_bond
                 { "error", string.Empty }
             };
 
-            /* TEST CONNECTION INPUT*/
+            /* TEST CONNECTION INPUT
             str_msg.data["operation"] = "connection";
-            
+            */
 
-            /* TEST STOCK INPUT
+            /* TEST STOCK INPUT*/
             str_msg.data["operation"] = "get_stock";
             //str_msg.data["operation"] = "update_stock";
             str_msg.data["struct_name"] = "StockStruct";
