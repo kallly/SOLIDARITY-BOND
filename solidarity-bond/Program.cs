@@ -49,7 +49,7 @@ namespace solidarity_bond
             str_msg.data["struct"] = new ReservationStruct();
             str_msg.data["struct"].centre = "Aix-en-Provence";
             str_msg.data["struct"].date = DateTime.Now;
-            str_msg.data["struct"].username = "baudry";
+            str_msg.data["struct"].username = "client";
             str_msg.data["struct"].objet = "crochetV1";
             */
             /*

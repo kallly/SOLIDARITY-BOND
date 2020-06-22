@@ -23,6 +23,9 @@ namespace solidarity_bond
                 case "solidarity_app_fablab":
                     str_msg = Solidarity(str_msg);
                     break;
+                case "solidarity_app_web":
+                    str_msg = Solidarity(str_msg);
+                    break;
                 default:
                     str_msg.data["success"] = string.Empty;
                     str_msg.data["error"] = "Unknown application";
