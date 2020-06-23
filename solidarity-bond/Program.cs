@@ -51,6 +51,7 @@ namespace solidarity_bond
             str_msg.data["struct"].date = DateTime.Now;
             str_msg.data["struct"].username = "client";
             str_msg.data["struct"].objet = "crochetV1";
+            str_msg.data["struct"].quantite = 4;
             */
             /*
             str_msg.data["operation"] = "update_reservation";

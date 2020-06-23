@@ -5,7 +5,7 @@ namespace solidarity_bond
     public struct ReservationStruct
     {
         public int id;
-        public string centre,username,objet;
+        public string centre,username,objet,quantite;
         public DateTime date;
         public string todo;
         public bool livraison,pre_expedition,expedition;
@@ -32,7 +32,8 @@ namespace solidarity_bond
             str_msg.data["struct"].date.ToString("yyyy-MM-dd") + "','" +
             str_msg.username + "','" +
             str_msg.data["struct"].centre + "','" +
-            str_msg.data["struct"].objet +
+            str_msg.data["struct"].objet + "','" +
+            str_msg.data["struct"].quantite +
             "');" ;
             Console.WriteLine(str_msg.data["query"]);
             return str_msg;
