@@ -7,6 +7,7 @@ namespace solidarity_bond
         private ConnectionExecutionEngine connectionExecEngine;
         private StockExecutionEngine stockExecEngine;
         private ReservationExecutionEngine reservationExecEngine;
+        private CentreExecutionEngine centreExecEngine;
 
         public CAM()
         {
@@ -69,6 +70,11 @@ namespace solidarity_bond
                     case "update_reservation":
                         reservationExecEngine = new ReservationExecutionEngine();
                         str_msg = reservationExecEngine.Update_reservation(str_msg);
+                        break;
+
+                    case "get_centre":
+                        centreExecEngine = new CentreExecutionEngine();
+                        str_msg = centreExecEngine.Get_centre(str_msg);
                         break;
                     default:
                         str_msg.data["success"] = string.Empty;

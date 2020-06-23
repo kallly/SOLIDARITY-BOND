@@ -23,6 +23,7 @@ namespace solidarity_bond
         private ConnectionComptoir connectionComptoir;
         private StockComptoir stockComptoir;
         private ReservationComptoir reservationComptoir;
+        private CentreComptoir centreComptoir;
 
         public Service()
         {
@@ -62,6 +63,11 @@ namespace solidarity_bond
                     str_msg = reservationComptoir.Add_reservation(str_msg);
                     break;
                 case "update_reservation":
+                    if (connectionComptoir == null) reservationComptoir = new ReservationComptoir();
+                    str_msg = reservationComptoir.Update_reservation(str_msg);
+                    break;
+
+                case "get_centre":
                     if (connectionComptoir == null) reservationComptoir = new ReservationComptoir();
                     str_msg = reservationComptoir.Update_reservation(str_msg);
                     break;
@@ -149,10 +155,8 @@ namespace solidarity_bond
                     content.Length, content );  
                 // Echo the data back to the client.  
                 
-                Console.WriteLine(content);
                 STR_MSG result = new STR_MSG();
                 try{
-                    Console.WriteLine(content.Substring(0,content.Length-5));
                     result = (STR_MSG)JsonConvert.DeserializeObject<STR_MSG>(content.Substring(0,content.Length-5));
                 }catch(Exception e){
                     Console.WriteLine(e);
@@ -164,6 +168,7 @@ namespace solidarity_bond
                 try{
                     
                     resultJSON = JsonConvert.SerializeObject(result);
+                    Console.WriteLine(resultJSON);
                 }catch(Exception e){
                     Console.WriteLine(e);
                 }
