@@ -45,6 +45,10 @@ namespace solidarity_bond
         {   
             return ExecSQL(reservationMap.SelectByUser(str_msg));
         }
+        public STR_MSG Get_reservations_by_id(STR_MSG str_msg)
+        {   
+            return ExecSQL(reservationMap.SelectById(str_msg));
+        }
         public STR_MSG Add_reservation(STR_MSG str_msg)
         {   
             return ExecSQL(reservationMap.Insert(str_msg));

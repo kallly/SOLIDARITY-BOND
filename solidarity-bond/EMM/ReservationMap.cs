@@ -26,6 +26,13 @@ namespace solidarity_bond
             Console.WriteLine(str_msg.data["query"]);
             return str_msg;
         }
+        public STR_MSG SelectById(STR_MSG str_msg)
+        {
+            str_msg.data["query"] = "SELECT * FROM reservationView " +
+            "WHERE ( id='" + str_msg.data["struct"].id + "');";
+            Console.WriteLine(str_msg.data["query"]);
+            return str_msg;
+        }
         public STR_MSG Insert(STR_MSG str_msg)
         {
             str_msg.data["query"] = "CALL InsertReservation('" +
@@ -42,11 +49,11 @@ namespace solidarity_bond
         {
             str_msg.data["query"] = "UPDATE reservation SET " +
             "todo='" + str_msg.data["struct"].todo + "'," +
-            "livraison=" + ((str_msg.data["struct"].livraison == "true")?"1":"0") + "," +
+            "livraison=" + (((bool)str_msg.data["struct"].livraison)?"1":"0") + "," +
             "livraison_date='" + str_msg.data["struct"].livraison_date.ToString("yyyy-MM-dd") + "'," +
-            "pre_expedition=" + ((str_msg.data["struct"].pre_expedition == "true")?"1":"0") + "," +
+            "pre_expedition=" + (((bool)str_msg.data["struct"].pre_expedition)?"1":"0") + "," +
             "pre_expedition_date='" + str_msg.data["struct"].pre_expedition_date.ToString("yyyy-MM-dd") + "'," +
-            "expedition=" + ((str_msg.data["struct"].expedition == "true")?"1":"0") + "," +
+            "expedition=" + (((bool)str_msg.data["struct"].expedition)?"1":"0") + "," +
             "expedition_date='" + str_msg.data["struct"].expedition_date.ToString("yyyy-MM-dd") + "' " +
             "WHERE ( id=" + str_msg.data["struct"].id + ");";
             Console.WriteLine(str_msg.data["query"]);

@@ -8,17 +8,17 @@ using Newtonsoft.Json;
 namespace solidarity_bond
 {
 
-    public class StateObject {  
-    public Socket workSocket = null;  
+    public class StateObject {
+    public Socket workSocket = null;
     public const int BufferSize = 1024;  
-    public byte[] buffer = new byte[BufferSize];  
+    public byte[] buffer = new byte[BufferSize];
     public StringBuilder sb = new StringBuilder();
     }
     
 
     class Service
     {
-        public static ManualResetEvent allDone = new ManualResetEvent(false);  
+        public static ManualResetEvent allDone = new ManualResetEvent(false);
 
         private ConnectionComptoir connectionComptoir;
         private StockComptoir stockComptoir;
@@ -68,8 +68,8 @@ namespace solidarity_bond
                     break;
 
                 case "get_centre":
-                    if (connectionComptoir == null) reservationComptoir = new ReservationComptoir();
-                    str_msg = reservationComptoir.Update_reservation(str_msg);
+                    if (connectionComptoir == null) centreComptoir = new CentreComptoir();
+                    str_msg = centreComptoir.Get_centre(str_msg);
                     break;
                 default:
                     str_msg.data["success"] = string.Empty;
